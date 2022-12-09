@@ -28,6 +28,7 @@ const SortData = ({ value, onChange ,selectedValue,setSelectedValue}) => {
           return (
             <>
              <RadioGroup
+             key={values.value}
         defaultValue="female"
         aria-labelledby="demo-customized-radios"
         name="customized-radios"

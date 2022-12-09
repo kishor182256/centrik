@@ -25,11 +25,21 @@ export const cartreducer = (state = INITIALSTATE, action) => {
 
            
 
-      
+            case "SET_PRODUCTS":
+              return { ...state, products: action.payload };
+            
+
+            
+              case "SORT_PRODUCTS":
+                console.log(action.payload);
+                return { ...state,
+                    
+                     products: action.payload.sort((a,b)=>(a.price > b.price ? 1 : -1))
+                     };
+              default:
+                return state;
 
         
-        // eslint-disable-next-line no-fallthrough
-        default:
-            return state
+        
     }
 }

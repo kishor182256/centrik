@@ -15,9 +15,9 @@ export const SET = (products) => {
 
 
 export const SORT = (value) => {
-    console.log('selectedValue',value);
+    console.log('SORT_BY_PRICE--->SORT_BY_PRICE',value);
     return {
-        type: "SORT_PRODUCTS",
+        type: "SORT_BY_PRICE",
         payload: value
     }
 }

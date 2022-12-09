@@ -22,15 +22,14 @@ const Home = () => {
 
 
   const NewfilteredData = data;
-  console.log('filteredData(tru/false)',filteredData);
+  // console.log('filteredData(tru/false)',filteredData);
 
 
 
   useEffect(() => {
-    if(filteredData===false)
     fetchData(selectedValue)
       .then((data) => {
-        console.log('------>',data.data.products);
+        // console.log('------>',data.data.products);
         setLoading(true)
           setData(dispatch(SET(data.data.products)))
           setLoading(false)
@@ -41,26 +40,26 @@ const Home = () => {
         console.error(error);
         setLoading(false)
       });
-  }, [selectedValue,dispatch,filteredData,NewfilteredData]);
+  }, [selectedValue,dispatch]);
 
 
-  useEffect(() => {
-    if(filteredData)
-    fetchData(selectedValue)
-      .then((data) => {
-        console.log('------>',data.data.products);
-         setLoading(true)
-          setData(NewfilteredData)
-          console.log('NewfilteredData',NewfilteredData);
-          setLoading(false)
-          setLoading(false)
+  // useEffect(() => {
+  //   if(filteredData)
+  //   fetchData(selectedValue)
+  //     .then((data) => {
+  //       // console.log('------>',data.data.products);
+  //        setLoading(true)
+  //         setData(NewfilteredData)
+  //         // console.log('NewfilteredData',NewfilteredData);
+  //         setLoading(false)
+  //         setLoading(false)
 
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false)
-      });
-  }, [filteredData, selectedValue, dispatch, NewfilteredData]);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       setLoading(false)
+  //     });
+  // }, [filteredData, selectedValue, dispatch, NewfilteredData]);
 
   const addToCart = (product)=>{
     console.log('state', state);

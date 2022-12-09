@@ -8,11 +8,12 @@ const Filter = ({data,setFilteredData}) => {
   const [low,setLow] = useState('');
   const [high,setHigh] = useState('');
 
-
+  const dispatch = useDispatch()
 
 const handlePriceChange = (event) => {
   if(event.target.value==="Low"){
     setFilteredData(true)
+    dispatch(SORT(data))
     console.log('setFilteredData',event.target.value);
   }else{
     if(event.target.value==="High"){

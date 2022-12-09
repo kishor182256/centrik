@@ -41,7 +41,7 @@ const Home = () => {
         console.error(error);
         setLoading(false)
       });
-  }, [selectedValue,dispatch,filteredData]);
+  }, [selectedValue,dispatch,filteredData,NewfilteredData]);
 
 
   useEffect(() => {
